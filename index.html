@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<style>
+    fieldset {
+        width: 500px;
+    }
+    
+    #one {
+        color: red;
+    }
+    
+    #two {
+        width: 490px;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <h1>学生信息</h1>
+    <fieldset>
+        <legend id="one">学生档案</legend>
+        <form id="testform" method="get" action="#S">
+            <p>姓名：</p><input type="text" name="name1" required placeholder="请输入姓名" autofocus autocomplete="off" id="two" />
+            <p>学号：</p>
+            <input type="number" name="name2" required placeholder="请输入学号" autofocus autocomplete="off" id="two" />
+            <p>手机号码：</p>
+            <input type="tel" name="name3" required placeholder="请输入手机号" autofocus autocomplete="off" id="two" />
+            <p>邮箱地址：</p>
+            <input type="email" name="name4" required placeholder="请输入邮箱地址" autofocus autocomplete="off" id="two" />
+            <p>录取学校：</p>
+            <input type="search" name="name5" list="names" id="two" />
+            <datalist id="names">
+                <option>河北师范大学</option>
+                <option>清华大学</option>
+                <option>北京大学</option>
+                <option>南京大学</option>
+                <option>上海复旦大学</option>
+            </datalist>
+            <p>入学成绩：</p>
+            <input type="number" name="name6" id="two" />
+            <p>入学时间：</p>
+            <input type="date" name="name7" id="two" />
+            <br/><br/>
+            <input type="submit" value="提交" id="two" />
+        </form>
+    </fieldset>
+</body>
+
+</html>
