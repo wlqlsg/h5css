@@ -7,7 +7,11 @@
 </head>
 <style>
     fieldset {
-        width: 500px;
+        width: 510px;
+    }
+    
+    span {
+        color: red;
     }
     
     #one {
@@ -25,13 +29,13 @@
     <fieldset>
         <legend id="one">学生档案</legend>
         <form id="testform" method="get" action="#S">
-            <p>姓名：</p><input type="text" name="name1" required placeholder="请输入姓名" autofocus autocomplete="off" id="two" />
+            <p>姓名：</p><input type="text" name="name1" required placeholder="请输入姓名" autofocus autocomplete="off" id="two" /> <span>*</span>
             <p>学号：</p>
-            <input type="number" name="name2" required placeholder="请输入学号" autofocus autocomplete="off" id="two" />
+            <input type="number" name="name2" required placeholder="请输入学号" autofocus autocomplete="off" id="two" /> <span>*</span>
             <p>手机号码：</p>
-            <input type="tel" name="name3" required placeholder="请输入手机号" autofocus autocomplete="off" id="two" />
+            <input type="tel" name="name3" required placeholder="请输入手机号" autofocus autocomplete="off" id="two" /> <span>*</span>
             <p>邮箱地址：</p>
-            <input type="email" name="name4" required placeholder="请输入邮箱地址" autofocus autocomplete="off" id="two" />
+            <input type="email" name="name4" required placeholder="请输入邮箱地址" autofocus autocomplete="off" id="two" /> <span>*</span>
             <p>录取学校：</p>
             <input type="search" name="name5" list="names" id="two" />
             <datalist id="names">
