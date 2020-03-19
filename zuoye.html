@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>demo</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 530px;
+        }
+        
+        h1 {
+            color: red;
+        }
+        
+        #a {
+            width: 500px;
+            height: 40px;
+            border: 1px solid gray;
+        }
+        
+        .b {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+        }
+        
+        #c {
+            width: 450px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h1>网页换肤</h1>
+        </legend>
+        <div id="a">
+            <div class="b" style="background-color:lime;"></div>
+            <div class="b" style="background-color: indianred;"></div>
+            <div class="b" style="background-color: indigo;"></div>
+            <div class="b" style="background-color: lemonchiffon;"></div>
+            <div class="b" style="background-color: lightblue;"></div>
+            <div class="b" style="background-color: lightslategray;"></div>
+        </div>
+        <div id="c">LocalStrorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用</div>
+    </fieldset>
+</body>
+<script>
+    var b = document.getElementsByClassName("b");
+    var c = document.getElementById("c");
+    var d;
+    for (var i = 1; i < b.length + 1; i++) {
+        ! function(i) {
+            b[i - 1].onclick = function() {
+                b[i - 1].style.marginTop = 5 + "px";
+                b[localStorage.key(0) - 1].style.marginTop = 10 + "px";
+                localStorage.removeItem(localStorage.key(0));
+                localStorage.setItem(i, b[i - 1].style.backgroundColor);
+                c.style.backgroundColor = localStorage.getItem(i);
+
+            };
+        }(i);
+    }
+    c.style.backgroundColor = localStorage.getItem(localStorage.key(0));
+    b[localStorage.key(0) - 1].style.marginTop = 5 + "px";
+</script>
+
+</html>
