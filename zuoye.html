@@ -54,20 +54,20 @@
 <script>
     var b = document.getElementsByClassName("b");
     var c = document.getElementById("c");
-    var d;
+    var d = localStorage.key(0);
     for (var i = 1; i < b.length + 1; i++) {
         ! function(i) {
             b[i - 1].onclick = function() {
                 b[i - 1].style.marginTop = 5 + "px";
-                b[localStorage.key(0) - 1].style.marginTop = 10 + "px";
-                localStorage.removeItem(localStorage.key(0));
+                b[d - 1].style.marginTop = 10 + "px";
+                localStorage.removeItem(d);
                 localStorage.setItem(i, b[i - 1].style.backgroundColor);
                 c.style.backgroundColor = localStorage.getItem(i);
             };
         }(i);
     }
     c.style.backgroundColor = localStorage.getItem(localStorage.key(0));
-    b[localStorage.key(0) - 1].style.marginTop = 5 + "px";
+    b[d - 1].style.marginTop = 5 + "px";
 </script>
 
 </html>
