@@ -59,19 +59,28 @@
     var b = document.getElementsByClassName("b");
     var c = document.getElementById("c");
     var d = document.getElementById("d");
+    if (localStorage.length == 0) {
+        localStorage.setItem(1, b[0].style.backgroundColor);
+    } else {
+        c.style.backgroundColor = localStorage.getItem(localStorage.key(0));
+        b[localStorage.key(0) - 1].setAttribute("id", "d");
+    }
     for (var i = 1; i < b.length + 1; i++) {
         ! function(i) {
             b[i - 1].onclick = function() {
-                b[i - 1].setAttribute("id", "d");
-                b[localStorage.key(0) - 1].removeAttribute("id");
+                if (localStorage.length != 0) {
+                    b[i - 1].setAttribute("id", "d");
+                    b[localStorage.key(0) - 1].removeAttribute("id");
+                } else {
+                    b[i - 1].setAttribute("id", "d");
+                }
                 localStorage.removeItem(localStorage.key(0));
                 localStorage.setItem(i, b[i - 1].style.backgroundColor);
                 c.style.backgroundColor = localStorage.getItem(i);
             };
         }(i);
     }
-    c.style.backgroundColor = localStorage.getItem(localStorage.key(0));
-    b[localStorage.key(0) - 1].setAttribute("id", "d");
 </script>
+
 
 </html>
